@@ -1,0 +1,43 @@
+body {
+  font : 14px Tahoma, Verdana, Helvetica, Arial, sans-serif;
+}
+
+#header, #card
+{
+  position : absolute;
+}
+
+#header {
+  top        : 0;
+  left       : 0;
+  right      : 0;
+  height     : 80px;
+  background : #FFF;
+}
+#header-load-file  + label  {
+  float        : right;
+  margin-top   : 20px;
+  margin-right : 10px;
+  height       : 20px;
+  width        : 100px;
+  cursor       : pointer;
+}
+#header-load-file {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+#card {
+  top        : 80px;
+  left       : 500px;
+  right      : 500px;
+  height     : 400px;
+  background : #EEE;
+}
+#card h2 {
+  text-align      : center;
+  margin-top      : 100px;
+}
