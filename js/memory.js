@@ -3,8 +3,8 @@ initModule = function (  ) {
 /* global variables */
   var cards = [
     'Item 1',
-    'Item 2',
-    'Item 3'
+    'A longer Item 2',
+    'A long long long long long long long long long long long long long long long long long long long long Item 3'
   ]
 
 /* state variables */
@@ -12,12 +12,19 @@ initModule = function (  ) {
 
 /* setup */
   setup = function() {
-    $("#card").html("<h2>"+cards[current]+"</h2>");
+    showCurrent();
+    $( "#next" ).click( onNext );
   }
 /* end setup */
 
 
 /* event handlers */  
+
+  onNext = function () {
+    current = (current + 1) % cards.length;
+    showCurrent();
+    return false;
+  }
 
 /* end event handlers */   
 
@@ -25,6 +32,10 @@ initModule = function (  ) {
 
 /* start utility */
 
+  showCurrent = function () {
+    $("#card_text").html("<h2>"+cards[current]+"</h2>");
+    return false;
+  }
 /* end utility */ 
 
   setup();
