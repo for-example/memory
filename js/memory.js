@@ -59,7 +59,11 @@ initModule = function (  ) {
   }
 
   onNext = function () {
-    current = Math.floor(Math.random() * cards.length); 
+    var current0 = current;
+    do {
+      current = Math.floor(Math.random() * cards.length); 
+    }  
+    while (current == current0 || cards.length < 1) 
     showCurrent();
     return false;
   }
