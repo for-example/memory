@@ -63,7 +63,7 @@ initModule = function (  ) {
     do {
       current = Math.floor(Math.random() * cards.length); 
     }  
-    while (current == current0 || cards.length < 2) 
+    while (current == current0 && cards.length > 1) 
     showCurrent();
     return false;
   }
