@@ -2,9 +2,27 @@ initModule = function (  ) {
 
 /* global variables */
   var cards = [
-    'Item 1',
-    'A longer Item 2',
-    'A long long long long long long long long long long long long long long long long long long long long Item 3'
+    "Dame pan y llámame tonto",
+    "Maestro Ciruela, que no sabía leer y puso escuela",
+    "Abad avariento, por un bodigo pierde ciento",
+    "Comiendo viene el apetito",
+    "Menos bulto más claridad",
+    "Esto aun está en veremos",
+    "Más vale prevenir que curar",
+    "A la vaca brava Dios la quita los cuernos",
+    "Más hacer y menos decir",
+    "Al pájaro se le conoce por su vuelo",
+    "En boca cerrada no entran moscas",
+    "Un lobo a otro no se muerden",
+    "El que no se arriesga no pasa la mar",
+    "Mente sana en cuerpo sano",
+    "Guárdate del agua mansa",
+    "En cada tierra su uso y en cada casa su costumbre",
+    "Bien está lo que bien acaba",
+    "El tiempo es oro",
+    "El tiempo es el mejor medico",
+    "A gran río, gran puente",
+    "Mucho ruído y pocas nueces"
   ]
 
 /* state variables */
@@ -14,7 +32,7 @@ initModule = function (  ) {
   setup = function() {
     current = 0;
     showCurrent();
-    $( "#next" ).click( onNext );
+    $( ".next" ).click( onNext );
     $( "#header-load-file" ).change( onLoadFile );
     return false;
   }

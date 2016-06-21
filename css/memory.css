@@ -44,11 +44,19 @@ body {
   margin-right    : 30px;
 }
 
-#next {
+.next {
   float         : right;
   margin-right  : 20px;
   margin-top    : 20px;
   height        : 30px;
   width         : 35px;
-  background    : #00dd00;
+}
+.next#green {
+   background   : #00dd00;
+}
+.next#yellow {
+   background   : #efdf88;
+}
+.next#red {
+   background   : #e67451;
 }
