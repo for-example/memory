@@ -58,7 +58,7 @@ initModule = function (  ) {
   }
 
   onNext = function () {
-    current = (current + 1) % cards.length;
+    current = Math.floor(Math.random() * cards.length); 
     showCurrent();
     return false;
   }
@@ -71,6 +71,7 @@ initModule = function (  ) {
 
   showCurrent = function () {
     $("#card_text").html("<h2>"+cards[current]+"</h2>");
+    $("#card_number").html(current);
     return false;
   }
   
