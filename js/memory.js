@@ -30,12 +30,12 @@ initModule = function (  ) {
 
 /* setup */
   setup = function() {
-    current = 0;
-    showCurrent();
     $( ".next" ).click( onNext );
     $( "#header-load-file" ).change( onLoadFile );
+    showCurrent();
     return false;
   }
+
 /* end setup */
 
 
@@ -51,7 +51,8 @@ initModule = function (  ) {
     reader.onload = function(e) { 
       json_str = e.target.result; 
       load_json(json_str);
-      setup();
+      
+      showCurrent();
       return false;
     };
     reader.readAsText(file); 
@@ -70,6 +71,7 @@ initModule = function (  ) {
 /* start utility */
 
   showCurrent = function () {
+    if (current == null || current > cards.length - 1 ) current = 0;
     $("#card_text").html("<h2>"+cards[current]+"</h2>");
     $("#card_number").html(current);
     return false;
