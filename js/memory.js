@@ -25,6 +25,8 @@ initModule = function (  ) {
     "Mucho ruído y pocas nueces"
   ]
 
+  var pool;
+  
 /* state variables */
   var current = 0;
 
@@ -61,7 +63,7 @@ initModule = function (  ) {
   onNext = function () {
     var current0 = current;
     do {
-      current = Math.floor(Math.random() * cards.length); 
+      current = pool[Math.floor(Math.random() * pool.length)]; 
     }  
     while (current == current0 && cards.length > 1) 
     showCurrent();
@@ -76,6 +78,8 @@ initModule = function (  ) {
 
   showCurrent = function () {
     if (current == null || current > cards.length - 1 ) current = 0;
+    if (pool == null) init_pool();
+    
     $("#card_text").html("<h2>"+cards[current]+"</h2>");
     $("#card_number").html(current);
     return false;
@@ -84,6 +88,14 @@ initModule = function (  ) {
   load_json = function ( str ) {
     var obj = JSON.parse(str);
     cards = obj;
+    init_pool();
+  }
+  
+  init_pool = function () {
+    pool = Array();
+    for (i = 0; i < cards.length; i++) {
+      pool.push(i);
+    }
   }
 /* end utility */ 
 
