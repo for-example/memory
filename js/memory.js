@@ -62,6 +62,22 @@ initModule = function (  ) {
 
   onNext = function () {
     var current0 = current;
+    
+    if (this.id == "yellow") {
+      pool.push(current);
+    }
+    else if (this.id == "red") {
+      pool.push(current);
+      pool.push(current);
+    }
+    else if (this.id == "green") {
+      var index1 = pool.indexOf(current);
+      var index2 = pool.lastIndexOf(current)
+      if (index2 > index1) {
+        pool.splice(index2, 1);
+      }  
+    }
+    alert(pool);
     do {
       current = pool[Math.floor(Math.random() * pool.length)]; 
     }  
