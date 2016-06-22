@@ -77,7 +77,6 @@ initModule = function (  ) {
         pool.splice(index2, 1);
       }  
     }
-    alert(pool);
     do {
       current = pool[Math.floor(Math.random() * pool.length)]; 
     }  
